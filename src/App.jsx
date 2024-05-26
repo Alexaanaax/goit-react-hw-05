@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
@@ -15,9 +15,11 @@ const MovieDetailsPage = lazy(() =>
 );
 const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage.jsx"));
 
+
 function App() {
   return (
     <>
+     <Router>
       <Navigation />
       <Suspense fallback={<Loader />}>
         <Routes>
@@ -30,6 +32,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
+      </Router>
     </>
   );
 }
