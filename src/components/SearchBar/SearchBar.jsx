@@ -9,7 +9,7 @@ export default function SearchBar({ onSubmit }) {
         placeholder="Enter movie name"
         autoComplete="off"
         autoFocus
-        pattern="/^[a-zA-Zа-яА-Я]+(([ '-][a-zA-Zа-яА-Я])?[a-zA-Zа-яА-Я]*)*$/"
+     
         required
         className={css.input}
       />
